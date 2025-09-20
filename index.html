@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SOLACE Music Player</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="light-theme">
+
+<header>
+  <img src="app-logo.png" alt="Logo" class="logo" />
+  <h1>SOLACE</h1>
+  <button id="theme-toggle">Switch Theme</button>
+</header>
+
+<main class="container-flex">
+  <aside class="artist-sidebar">
+    <div class="artist-grid">
+      <div class="artist-card"><img src="justin_bieber.jpg" alt="Justin Bieber" /></div>
+      <div class="artist-card"><img src="arijit_singh.jpg" alt="Arijit Singh" /></div>
+      <div class="artist-card"><img src="ed_sheeran.jpg" alt="Ed Sheeran" /></div>
+      <div class="artist-card"><img src="artist4.jpg" alt="Artist 4" /></div>
+      <div class="artist-card"><img src="artist5.jpg" alt="Artist 5" /></div>
+    </div>
+  </aside>
+  <section class="main-display">
+    <!-- Mood phrase -->
+    <div class="mood-question">What's your mood today?</div>
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+      <div class="mood-toggle-container">
+        <label for="mood-toggle">Mood Mode:</label>
+        <input type="checkbox" id="mood-toggle" />
+        <span id="mood-toggle-status">OFF</span>
+      </div>
+      <div class="playlist-bar">
+        <label>Playlist:</label>
+        <select id="playlist-select"></select>
+        <button id="add-playlist-btn" title="Add New Playlist">＋</button>
+        <button id="loop-playlist-btn" title="Loop Playlist">🔁</button>
+      </div>
+    </div>
+    <section id="mood-section">
+      <h2>Search by Mood</h2>
+      <div class="mood-buttons">
+        <button data-mood="happy">😊 Happy</button>
+        <button data-mood="sad">😢 Sad</button>
+        <button data-mood="chill">😎 Chill</button>
+        <button data-mood="energetic">🔥 Energetic</button>
+      </div>
+    </section>
+    <section id="search-section">
+      <div class="search-row">
+        <input type="text" id="song-search" placeholder="Search songs or artists..." />
+        <button id="voice-search-btn" title="Voice Search">🎤</button>
+        <select id="language-select">
+          <option value="english" selected>English</option>
+          <option value="hindi">Hindi</option>
+          <option value="spanish">Spanish</option>
+          <option value="french">French</option>
+        </select>
+        <button id="search-btn">Search</button>
+      </div>
+    </section>
+    <section id="search-results"></section>
+    <div style="text-align:right;margin-bottom:8px;">
+      <button id="share-playlist-btn">Share Playlist</button>
+      <span id="share-status"></span>
+    </div>
+    <section class="music-player">
+      <div class="art-container">
+        <img src="default-album.jpg" alt="Album Art" class="art" />
+      </div>
+      <div class="song-info">
+        <h2 class="title">Select or Search Song</h2>
+        <h3 class="artist"></h3>
+      </div>
+      <div class="controls">
+        <button id="prev">Prev</button>
+        <button id="play">Play</button>
+        <button id="next">Next</button>
+      </div>
+      <input type="range" id="progress" min="0" max="100" value="0" />
+      <div class="time">
+        <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+      </div>
+      <section id="lyrics-section">
+        <h3>Lyrics</h3>
+        <pre id="lyrics">Select a song to see lyrics...</pre>
+      </section>
+    </section>
+    <section id="timeline-section">
+      <h3 class="timeline-title">Last Month's Songs</h3>
+      <ul id="timeline-list"></ul>
+    </section>
+  </section>
+</main>
+<script src="script.js"></script>
+<div id="emoji-container"></div>
+
+</body>
+</html>
